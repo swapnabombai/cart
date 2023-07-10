@@ -1,43 +1,39 @@
 pipeline {
     agent {
-      node {label 'practice'}
+      node { label 'practice' }
 
     }
 
-    stages {
-        stage('code checkout') {
-            steps {
-                echo 'code checkout'
-            }
-        }
+
     stages {
         stage('build') {
             steps {
-                 echo 'build'
+                 echo 'npm install'
             }
         }
-    stages {
+
         stage('unit tests') {
            steps {
                 echo 'unit tests'
+                // sh 'npm test'
            }
         }
-    stages {
+
         stage('code analysis') {
            steps {
                echo 'code analysis'
            }
         }
-    stages {
+
         stage('Security Scans') {
            steps {
                echo 'Security Scans'
            }
         }
-    stages {
-        stage('publish a artifact') {
+
+        stage('Publish a Artifact') {
            steps {
-               echo 'publish a artifact'
+               echo 'Publish a Artifactrtifact'
            }
         }
     }
