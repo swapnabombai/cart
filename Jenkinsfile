@@ -21,7 +21,7 @@ pipeline {
 
         stage('code analysis') {
            steps {
-               echo 'code analysis'
+               sh 'sonar-scanner -Dsonar.host.url=http://172.31.80.223:9000 -Dsonar.login=admin -Dsonar.password=admin123 -Dsonar.projectKey=cart'
            }
         }
 
@@ -33,7 +33,7 @@ pipeline {
 
         stage('Publish a Artifact') {
            steps {
-               echo 'Publish a Artifactrtifact'
+               echo 'Publish a Artifact'
            }
         }
     }
